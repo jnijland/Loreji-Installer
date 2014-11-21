@@ -51,7 +51,7 @@ if [ -e /usr/local/cpanel ] || [ -e /etc/loreji ] || [ -e /usr/local/directadmin
     echo "It appears that a control panel is already installed on your server; This installer "
     echo "is designed to install and configure Loreji on a clean OS installation only!"
     echo -e "\nPlease re-install your OS before attempting to install using this script."
-    exit 1;
+    #exit 1;
 fi
 
 inst() {
@@ -64,7 +64,7 @@ if (inst php) || (inst apache) || (inst mysql) || (inst postfix) || (inst doveco
     echo "It appears that apache/mysql/bind/postfix is already installed; This installer "
     echo "is designed to install and configure Loreji on a clean OS installation only!"
     echo -e "\nPlease re-install your OS before attempting to install using this script."
-    exit 1;
+    #exit 1;
 fi
 
 # ***************************************
@@ -201,7 +201,7 @@ apt-get -y install sudo wget vim make zip unzip git debconf-utils at build-essen
 # Clone Loreji from GitHub
 echo -e "\nDownloading Loreji, Please wait, this may take several minutes, the installer will continue after this is complete!"
 git clone https://github.com/Loreji/LorejiPanel.git
-cd Loreji/
+cd LorejiPanel/
 git checkout Develop
 mkdir ../loreji_install_cache/
 git checkout-index -a -f --prefix=../loreji_install_cache/
